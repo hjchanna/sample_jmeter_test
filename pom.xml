@@ -54,7 +54,7 @@
                     <remoteConfig>
                         <startServersBeforeTests>true</startServersBeforeTests>
                         <stopServersAfterTests>true</stopServersAfterTests>
-                        <startAndStopServersForEachTest>true</startAndStopServersForEachTest>
+                        <!--<startAndStopServersForEachTest>true</startAndStopServersForEachTest>-->
                     </remoteConfig>
                 </configuration>
             </plugin>
