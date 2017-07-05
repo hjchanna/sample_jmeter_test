@@ -50,6 +50,13 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <remoteConfig>
+                        <startServersBeforeTests>true</startServersBeforeTests>
+                        <stopServersAfterTests>true</stopServersAfterTests>
+                        <startAndStopServersForEachTest>true</startAndStopServersForEachTest>
+                    </remoteConfig>
+                </configuration>
             </plugin>
         </plugins>
     </build>
