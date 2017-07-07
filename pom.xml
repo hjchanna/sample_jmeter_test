@@ -36,6 +36,16 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                
+<!--                <executions>
+                    <execution>
+                        <id>springboot-run</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>-->
             </plugin>
             <plugin>
                 <groupId>com.lazerycode.jmeter</groupId>
@@ -44,19 +54,22 @@
                 <executions>
                     <execution>
                         <id>jmeter-tests</id>
-                        <phase>verify</phase>
+                        <phase>install</phase>
                         <goals>
                             <goal>jmeter</goal>
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
+                <!--                <configuration>
                     <remoteConfig>
                         <startServersBeforeTests>true</startServersBeforeTests>
                         <stopServersAfterTests>true</stopServersAfterTests>
-                        <!--<startAndStopServersForEachTest>true</startAndStopServersForEachTest>-->
+                        <startAndStopServersForEachTest>true</startAndStopServersForEachTest>
                     </remoteConfig>
-                </configuration>
+                    <propertiesJMeter>
+                        <log_level.jmeter>DEBUG</log_level.jmeter>
+                    </propertiesJMeter>
+                </configuration>-->
             </plugin>
         </plugins>
     </build>
