@@ -36,40 +36,55 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                
-<!--                <executions>
-                    <execution>
-                        <id>springboot-run</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>-->
             </plugin>
+            
             <plugin>
-                <groupId>com.lazerycode.jmeter</groupId>
-                <artifactId>jmeter-maven-plugin</artifactId>
-                <version>2.2.0</version>
+                
+                <groupId>org.hjchanna.ejmp</groupId>
+                <artifactId>enhanced-jmeter-maven-plugin</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                
                 <executions>
                     <execution>
-                        <id>jmeter-tests</id>
-                        <phase>install</phase>
+                        <id>enhanced-jmeter</id>
                         <goals>
-                            <goal>jmeter</goal>
+                            <goal>enhanced-jmeter</goal>
+                        </goals>
+                    </execution>
+                    
+                    <execution>
+                        <id>generate-reports</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>generate-reports</goal>
                         </goals>
                     </execution>
                 </executions>
-                <!--                <configuration>
-                    <remoteConfig>
-                        <startServersBeforeTests>true</startServersBeforeTests>
-                        <stopServersAfterTests>true</stopServersAfterTests>
-                        <startAndStopServersForEachTest>true</startAndStopServersForEachTest>
-                    </remoteConfig>
-                    <propertiesJMeter>
-                        <log_level.jmeter>DEBUG</log_level.jmeter>
-                    </propertiesJMeter>
-                </configuration>-->
+                
+                
+                <configuration>
+                    <enhancedConfiguration>
+                        <serverConfiguration>
+                            <startupCommands>
+                                <param>"C:\Program Files\Java\jdk1.8.0_131\bin\java" -jar "D:\projects\test\springboot_jmeter\sample_jmeter_test\target\sample_springboot_service-1.0-SNAPSHOT.jar"</param>
+                            </startupCommands>
+                            <host>127.0.0.1</host>
+                            <port>8080</port>
+                            <validationCount>10</validationCount>
+                            <validationInterval>1050</validationInterval>
+                            <suppressOutput>true</suppressOutput>
+                            <enabled>true</enabled>
+                        </serverConfiguration>
+                        <reportConfiguration>
+                            <reportTypes>
+                                <param>ThreadsStateOverTime</param>
+                                <param>HitsPerSecond</param>
+                                <param>ResponseTimesOverTime</param>
+                                <param>TransactionsPerSecond</param>
+                            </reportTypes>
+                        </reportConfiguration>
+                    </enhancedConfiguration>
+                </configuration>
             </plugin>
         </plugins>
     </build>
