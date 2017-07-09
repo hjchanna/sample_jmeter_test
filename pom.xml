@@ -66,7 +66,9 @@
                     <enhancedConfiguration>
                         <serverConfiguration>
                             <startupCommands>
-                                <param>"C:\Program Files\Java\jdk1.8.0_131\bin\java" -jar "D:\projects\test\springboot_jmeter\sample_jmeter_test\target\sample_springboot_service-1.0-SNAPSHOT.jar"</param>
+                                <param>java</param>
+                                <param>-jar</param>
+                                <param>"${project.basedir}\target\sample_springboot_service-1.0-SNAPSHOT.jar"</param>
                             </startupCommands>
                             <host>127.0.0.1</host>
                             <port>8080</port>
